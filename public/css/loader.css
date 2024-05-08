@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+body {
+  background-color: #3f0918;
+}
+.loading {
+  width: 300px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 25%;
+  color: white;
+  font-size: 30px;
+  font-family: "Quicksand", sans-serif;
+}
+.loading:before {
+  content: "";
+  animation: load 15s linear;
+}
+.loading:before {
+  content: "COMPLETED...!!";
+  font-size: 30px;
+}
+@keyframes load {
+  0% {
+    content: "STARTING";
+  }
+  10% {
+    content: "loading.";
+  }
+  20% {
+    content: "Loading..";
+  }
+  30% {
+    content: "LOading...";
+  }
+  40% {
+    content: "LOAding....";
+  }
+  50% {
+    content: "LOADing.....";
+  }
+  60% {
+    content: "LOADIng......";
+  }
+  70% {
+    content: "LOADINg.......";
+  }
+  80% {
+    content: "LOADING........";
+  }
+  85% {
+    content: "COMPLETED...!!";
+  }
+}
