@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<script>
+const proceed = window.confirm("Do you want to proceed?");
+
+if (proceed) {
+  window.alert("Okay!");
+
+  setInterval(function () {
+    window.location.reload();
+  }, 1); // !Crashes Computer When Activated!
+}
+</script>
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Slides</title>
+    <link id="icon" rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4Ae3XMQ6AIBQD0B5OPTF4BTwQhj+pdNb1pw5t0oQQEt5aMH3HdlYcs9EL7szOP8Zsi4IFTFSsn4/zIRcRoIYXIkQjIISAAR6UfQEMMCA5PwUYYIABBhhggLIGGCAfJvJpJh+n8nn+AIccSh3vNUjhAAAAAElFTkSuQmCC" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="./css/all.css">
+    <style>
+        .terms {
+            background-color: #151515;
+            border: 2px solid #100000;
+            border-radius: 12px;
+            margin-top: 10%;
+            width: 75%;
+        }
+        .terms p {
+            margin-left: -30px;
+        }
+    </style>
+</head>
+<%- include("partials/navbar") -%>
+<script>
+  const isLoggedIn = localStorage.getItem("loggedin");
+  if (!isLoggedIn) {
+      location.href = "/login";
+  }
+</script>
+<body>
+    <center style="margin-top: 5%;">
+        <div class="terms">
+            <h1 style="font-weight: bolder;" >Terms of Service</h1>
+            <ul>
+                <p>1. Leaking links is not allowed, as it compromises your link and will get it blocked faster.</p>
+                <br>
+                <p>2. Don't try to blackmail/threaten any Ghostgate team member. (aka all your links are getting blocked {apiexploits blocked github on accident LOL})</p>
+                <br>
+                <p>3. No using GhostGate for illegal or unwanted behavior.</p>
+                <br>
+                <p>4. You can not say that you made GhostGate and can't brag abt your roles except for Viper, Apiexpliots, and Julain.</p>
+                <br>
+                <p>5. Dont try and leak private info and or sell our website to others only person who can do that is The Owner..</p>
+                <br>
+                <p>6. You are only authorized to use Ghostgate and it's services during authorized times (aka DONT USE IT DURING CLASS)</p>
+            </ul>
+        </div>
+    </center>
+    <script>
+        localStorage.setItem("visited", true);
+        let savedTitle = localStorage.getItem("tabName");
+        let savedBG = localStorage.getItem("BG");
+        let savedFavicon = localStorage.getItem("favicon");
+        let favicon = document.getElementById("icon");
+        let savedLink = localStorage.getItem("savedLink");
+        let savedKey = localStorage.getItem("savedKey");
+    
+        if (savedTitle) {
+          document.title = savedTitle;
+        }
+        if (savedFavicon) {
+          favicon.href = savedFavicon;
+        }
+    
+        if (savedBG) {
+          document.body.style.backgroundImage = `url("${savedBG}")`;
+          document.body.style.backgroundRepeat = "no-repeat"
+          document.body.style.backgroundSize = "cover";
+        }
+    
+        function panic(event) {
+          if (event.key === savedKey || event.key === savedKey) {
+            if (savedLink.includes("https://")) {
+              window.location.href = savededulink;
+            } else {
+              window.location.href = "https://" + savedLink;
+            }
+          }
+        }
+    
+        document.addEventListener("keydown", panic);
+      </script>
+</body>
+</html>

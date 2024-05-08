@@ -1,0 +1,169 @@
+ <!DOCTYPE html>
+<html lang="en" style="width: 100%; height: 100%;">
+  
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> GhostGate
+  </title>
+  <link rel="stylesheet" href="./css/navbar.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="" />
+    
+  <link id="icon" rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4Ae3XMQ6AIBQD0B5OPTF4BTwQhj+pdNb1pw5t0oQQEt5aMH3HdlYcs9EL7szOP8Zsi4IFTFSsn4/zIRcRoIYXIkQjIISAAR6UfQEMMCA5PwUYYIABBhhggLIGGCAfJvJpJh+n8nn+AIccSh3vNUjhAAAAAElFTkSuQmCC"  />                
+  <%- include("partials/navbar") %>
+</head>
+<script
+  let visited = localStorage.getItem("visited");
+  if (visited === "" || visited === null || !visited) {
+    alert("Before using our website, please read our Terms of Service. (Located in our extra page!)");
+  }
+</script
+<script>
+  const isLoggedIn = localStorage.getItem("loggedin");
+  if (!isLoggedIn) {
+    location.href = "/login";
+  }
+</script>
+
+<script>
+  let splashtext = [
+    "block this if your antisemetic",,
+  ]
+  document.getElementById("splash").innerText = splashtext[Math.floor(Math.random() * splashtext.length)]
+</script>
+    
+<body>
+  <div>
+    <center class="center" style="margin-top: 3%;"><br /><br /><br />
+      <div
+        style="display: flex; justify-content: center; background-color: rgb(28, 28, 28, 0.75); padding: 20px; width: 70%; border: 2px solid #1c1c1c; border-radius: 12px;">
+        <div style="margin-left: auto;">
+          <script type="text/javascript">
+            atOptions = {
+              'key': '92e37525b44e4820b9da8c1d40df81ad',
+              'format': 'iframe',
+              'height': 600,
+              'width': 160,
+              'params': {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/92e37525b44e4820b9da8c1d40df81ad/invoke.js"></scr' + 'ipt>');
+          </script>
+        </div>
+        <div class="content" style="width: 2000px">
+          <h1><strong><bold><large><neon><horizon>GhostGate</horizon></neon></large></bold></strong></h1>
+          <p id="splash"></p>
+          <p>V2 Soon!</p>
+          <div class="loading"></div>
+          <form style="width: 100%; display: flex; justify-content: center;">
+            <input type="text" id="searchbar" placeholder="Search the web freely..." />
+            <button id="searchbtn" style="margin-left: 5px;">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <br />
+          <div style="display: flex; justify-content: center; width: 100%;">
+            <button
+              onclick="openApp('https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiI2NaovLOEAxXDnGoFHXvUDqEQFnoECAkQAQ&url=https%3A%2F%2Fwww.google.com%2F&usg=AOvVaw1xDfJh-YduXzT4-Mrql0P3&opi=89978449')"
+              class="browserbtn">
+              <img src="./img/google.png" />
+            </button>
+            <button onclick="openApp('https://www.bing.com')" class="browserbtn">
+              <img src="./img/bing.jpg" />
+            </button>
+            <button onclick="openApp('https://you.com')" class="browserbtn">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAEY0lEQVR4AYXWA5DkahSG4VyrjGvbY9ueWdu2dbG2bdu2bdtmmzvo7s3Z+k7X39vpZGZT9Y4nT84fVKSsTvm+qlWydKtR2X6kdhWnDTWuVEyobTU7N66zifZsKqOD+0vp0hk3rV1aSuNbWPjn83t4W9vXRBuHP3Og9QOfHNwy7nEnf4M/jJq05pOsDKezap6btPKHAQK7e8XDn4c3sDI6t9UrdHUPM8Nbh1g54GwIEFhWygvSqkZiiSJMBezxfRkxJlABo2XtDLKABcpgXKy1c2KsTFplR5QhBTh1cClDRj1RSTHxcg6rZOcmVNHTzHoGpAmv7/+gmxQe7twTGSJTYAlBLgUqAmg1y4xhw1S9siw0PNeAgCrgRQ0NPhTnVAoKKtYF/yFTYAIVAUv9upgWznD5MFkmXs6e8SYalGZQo1V1CnRFp8c6KfRnl/zbz14EnyuCAeJCERsmxXQABSrg8dnaqPTjjyWANMPBAMVnhCtWTIcNF0+d3x3UMdI7Zf8EkwJEABHApQ0eE4M/fk+BqeCv3nPzLeG3YXkVoD8qwOnZhopA7YD17C4rMCwnrlqAzYOdqinHJJkU4IoqpteDn31C9NE7MnVuXYKlVE2Hc6oFAkPA0MJ80ysQ5wXLhp2LgCDcFrjRAzbgePKowP/CHCoQmADX13xGEo4UjZnowbJx+Pr4Sd5xeRtufDzqVODwaDtjsxOsnMC2VzJ7QUyAhzGA6zexI21ITKaFAhQYmhjpYGylN8ZEknjyA8MjCzuVZVJdIJi6Tl0XEBWKxxpALWxnkhc6WmDxgmL5BEbEIBAcBEMJVUrot6gyVCGqhSFgIim5iZNQ5e7F1Kibg8PX+NlvlYpFjHLpTly1OCAF+vyJB+dLhR1P0TF0qegpJ2HnKKaDs8LEgRXVMCMVKsuM8rIJCF1Iu8eQSMofZSP/EgeaNKvU5aki8QagNSl2DAjdLbylSKo0z0goaZZOs7SJ931VmXKFmvW+wfVvcZXb0P08lVlLVeidvLO+nlY740uqsuW+J3XtE/IvacVNVcBQ8/GnqfeA49ystoeQCrXvvEX6mjs1YxAl7r5O5ZW/+SDXbs5uX9OGbOLW91xDe9ospwu9NzIKzNBwkSxyNF1MInwvFR65pks9c41Q5LFzihIOHhQx2HLdOq7Pqlk0Zdo8Wj5mFh3rM9GXrusYp7H9KBIVd1KG30s5J08fBRZ2/oSiiHM7X4iyji8h1GD/TMbQ/NW9aO3MIXRyalfuweAeXHGfLuVm6d15jxR2Zn2XyGtHSPTHte2+frq+moIvrHT5g713DOEAIgHqJ9b35RpTSzPzsJqd+DURU/gjom+vz6egy1O4tHMjqfqpAdT+0P80eH8TxpZtK6T9m7LowpocurcojyzzMjjP7BRV9qlJTsWLMCbxh5AW2ORIK4BIAV7fGEwlq4I0sy/8XfkiLMLyfnFu+p4vz41yBRZ3ogchgEiAAgWIjOu/KRbZ1nx1xLziq27+xktv2LM4KTxhUgAAAABJRU5ErkJggg==" />
+            </button>
+            <button onclick="openApp('https://www.yahoo.com')" class="browserbtn">
+              <img src="./img/yahoo.png" />
+            </button>
+            <button onclick="openApp('https://start.duckduckgo.com/')" class="browserbtn">
+              <img src="./img/duckduckgo.png" />
+            </button>
+          </div>
+            <p>
+         wanna Report a problem <a href="https://forms.gle/oUHbRRpvXiZdfHs28" target="_blank" style="color: rgb(0, 132, 255);">click this!</a>
+        </p>
+        </div>
+
+        <div style="margin-right: auto;">
+          <script type="text/javascript">
+            atOptions = {
+              'key': '92e37525b44e4820b9da8c1d40df81ad',
+              'format': 'iframe',
+              'height': 600,
+              'width': 160,
+              'params': {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/92e37525b44e4820b9da8c1d40df81ad/invoke.js"></scr' + 'ipt>');
+          </script>
+        </div>
+      </div>
+      <%- include("partials/footer") -%>
+    </center>
+  </div>
+  <style>
+    .joinbutton {
+      margin-top: 10px;
+      width: 150px;
+      padding: 2px;
+      border-radius: 15px;
+      background-color: #202020;
+      border: 2px solid #101010;
+      border-radius: 25px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      transition: 0.2s;
+    }
+
+    .joinbutton:hover {
+      background-color: rgb(15, 115, 255);
+      color: #fff;
+    }
+  </style>
+  <script src="./uv/uv.bundle.js"></script>
+  <script src="./uv/uv.config.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/mobile.js"></script>
+  <script>
+    let savedTitle = localStorage.getItem("tabName");
+    let savedBG = localStorage.getItem("BG");
+    let savedFavicon = localStorage.getItem("favicon");
+    let favicon = document.getElementById("icon");
+    let savedLink = localStorage.getItem("savedLink");
+    let savedKey = localStorage.getItem("savedKey");
+    if (savedTitle) {
+      document.title = savedTitle;
+    }
+    if (savedFavicon) {
+      favicon.href = savedFavicon;
+    }
+
+    let tabclosingval = localStorage.getItem("tabcloseval");
+    
+    window.onbeforeunload = () => {
+      if (tabclosingval == "true") {
+        return "Do you want to leave the current tab?";
+      }
+    }
+
+    if (savedBG) {
+      document.body.style.backgroundImage = `url("${savedBG}")`;
+      document.body.style.backgroundRepeat = "no-repeat"
+      document.body.style.backgroundSize = "cover";
+    }
+
+    function panic(event) {
+      if (event.key === savedKey || event.key === savedKey) {
+        if (savedLink.includes("https://")) {
+          window.location.href = savededulink;
+        } else {
+          window.location.href = "https://" + savedLink;
+        }
+      }
+    }
+    document.addEventListener("keydown", panic);
+
+</body>
+
+</html>

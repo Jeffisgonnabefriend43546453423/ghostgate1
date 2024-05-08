@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.css"/>
+    <title>Google Slides</title>
+    <link id="icon" rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4Ae3XMQ6AIBQD0B5OPTF4BTwQhj+pdNb1pw5t0oQQEt5aMH3HdlYcs9EL7szOP8Zsi4IFTFSsn4/zIRcRoIYXIkQjIISAAR6UfQEMMCA5PwUYYIABBhhggLIGGCAfJvJpJh+n8nn+AIccSh3vNUjhAAAAAElFTkSuQmCC" />
+</head>
+<script>
+    const isLoggedIn = localStorage.getItem("loggedin");
+    if (!isLoggedIn) {
+      location.href = "/login";
+    }
+  </script>
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+        background-color: #1c1c1c;
+    }
+    .error_text{
+      align-content: center;
+      color: white;
+    }
+  
+</style>
+<body>
+    <%- include("partials/navbar") %>
+    <center>
+    <div class = "error_text" style="margin-top: 10%;">
+       <h1 style="font-size: 75px;"><%= title %></h1>
+       <img src="https://i.ytimg.com/vi/_5MWclyxyD0/maxresdefault.jpg" alt="balls :]" style="width: 35%;"><br/><br/>
+         
+
+</html>
+    </div>
+</center>
+</body>
+</html>

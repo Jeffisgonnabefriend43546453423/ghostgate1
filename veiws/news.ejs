@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Slides
+    </title>
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link id="icon" rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4Ae3XMQ6AIBQD0B5OPTF4BTwQhj+pdNb1pw5t0oQQEt5aMH3HdlYcs9EL7szOP8Zsi4IFTFSsn4/zIRcRoIYXIkQjIISAAR6UfQEMMCA5PwUYYIABBhhggLIGGCAfJvJpJh+n8nn+AIccSh3vNUjhAAAAAElFTkSuQmCC" />
+    <style>
+        .extra {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 5%;
+        }
+
+        .panel {
+            background-color: rgb(26, 26, 26, 0.75);
+            border: 2px solid #1b1b1b;
+            width: auto;
+            padding: 20px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            margin-left: 10px; 
+            margin-right: 10px;
+            margin-top: 20px;
+        }
+      
+              .loyalc {
+            background-color: rgb(26, 26, 26, 0.75);
+            border: 2px solid #1b1b1b;
+            width: auto;
+            padding: 20px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 20px;
+                
+      }
+
+        .project-cards {
+            background-color: rgb(30, 30, 30);
+            width: 25%;
+            padding: 20px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .card {
+            background-color: rgb(30, 30, 30);
+            width: 10%;
+            padding: 20px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 20px;
+            transition: 0.3s;
+            font-size: 90%;
+        }
+
+        .card:hover {
+            transform: scale(0.9);
+            background-color: rgb(37, 37, 37);
+        }
+
+        .project-cards:hover {
+            transform: scale(0.9);
+            background-color: #252525;
+        }
+
+        .card p {
+            font-size: 0.9vw;
+        }
+    </style>
+</head>
+<script>
+    const isLoggedIn = localStorage.getItem("loggedin");
+    if (!isLoggedIn) {
+        location.href = "/login";
+    }
+</script>
+
+<body>
+    <%- include("partials/navbar") %>
+        <center>
+            <div class="extra">
+                <div class="panel" style="width: 80%;">
+                    <h1>Partners</h1>
+                    <div style="display: flex; justify-content: center; width: 100%; flex-wrap: wrap;">
+                        <div class="card" onclick="window.open('https://snorlaxscave.site').focus()">
+                            <img src="" style="width: 90%; border-radius: 10px;" />
+                            <p>Coming soon!</p>
+                        </div>
+                        <div class="card" onclick="window.open('none').focus()">
+                            <img src="" style="width: 90%; border-radius: 10px;" />
+                            <p>Coming soon!</p>
+                        </div>
+                        <div class="card"
+                            onclick="window.open('none').focus()">
+                            <img src="" style="width: 90%; border-radius: 10px;" />
+                            <p>Coming soon!</p>
+                        </div>
+                        <div class="card" onclick="window.open('none').focus()">
+                            <img src="" style="width: 90%; border-radius: 10px;" />
+                            <p>Coming soon!</p>
+                        </div>
+                        <div class="card" onclick="window.open('none').focus()">
+                            <img src="" style="width: 90%; border-radius: 10px;" />
+                            <p>Coming soon</p>
+                        </div>
+                        <div class="card" onclick="window.open('none').focus()">
+                            <img src="" style="width: 90%; border-radius: 10px;" />
+                            <p>Coming soon!</p>
+                        </div>
+                        <div class="card" onclick="window.open('none').focus()">
+                            <img src="" style="width: 90%; border-radius: 10px;" />
+                            <p>Coming soon!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <h1>Credits</h1>
+                    <p><strong>Jacob</strong> - Official Founder of GhostGate.</p>
+                    <p><strong>Julian</strong> - Official Co-Founder of GhostGate.</p>
+                    <p><strong>Tristen</strong> - Official Beta-Tester Of GhostGate.</p>
+                    <p><strong>Rocco D</strong> - EX Therapist And Designer of GhostGate. (he no longer works for us...</p>
+                    <p><strong>Other Jacob</strong> - Official Secondary Beta-Tester Of GhostGate.</p>
+                    <p><strong>Chat-GPT</strong> - Helps with GhostGates CSS ( Css is a language of code that's hard asf to learn.)</p>
+                  
+ 
+                    <h1>Loyal Customers</h1>
+                    <p><strong>Blaise</strong> - First Customer🤩</p>
+                    <p><strong>Cameron</strong> - Nerdy Customer🤓 (no offense)</p>
+                    <p><strong>Caden</strong> - Best Customer😯</p>
+                  
+                </div>
+                <div class="panel">
+                    <h1>ToS</h1>
+                    <p>Terms of Service (For dumb people its called Rules)</p><br />
+                    <button onclick="window.location.href = '/tos'">
+                        Terms of Service
+                    </button><br /><br />
+                    <br />
+                </div>
+            </div>
+        </center>
+        <%- include("partials/footer") %>
+            <script>
+                let savedTitle = localStorage.getItem("tabName");
+                let savedBG = localStorage.getItem("BG");
+                let savedFavicon = localStorage.getItem("favicon");
+                let favicon = document.getElementById("icon");
+                let savedLink = localStorage.getItem("savedLink");
+                let savedKey = localStorage.getItem("savedKey");
+
+                if (savedTitle) {
+                    document.title = savedTitle;
+                }
+                if (savedFavicon) {
+                    favicon.href = savedFavicon;
+                }
+
+                if (savedBG) {
+                    document.body.style.backgroundImage = `url("${savedBG}")`;
+                    document.body.style.backgroundRepeat = "no-repeat"
+                    document.body.style.backgroundSize = "cover";
+                }
+                let tabclosingval = localStorage.getItem("tabcloseval");
+
+                window.onbeforeunload = () => {
+                    if (tabclosingval == "true") {
+                        return "Do you want to leave the current tab?";
+                    }
+                }
+                function panic(event) {
+                    if (event.key === savedKey || event.key === savedKey) {
+                        if (savedLink.includes("https://")) {
+                            window.location.href = savededulink;
+                        } else {
+                            window.location.href = "https://" + savedLink;
+                        }
+                    }
+                }
+
+                document.addEventListener("keydown", panic);
+            </script>
+</body>
+
+</html>

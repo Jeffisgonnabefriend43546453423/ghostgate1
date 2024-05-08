@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Slides</title>
+  <link id="icon" rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4Ae3XMQ6AIBQD0B5OPTF4BTwQhj+pdNb1pw5t0oQQEt5aMH3HdlYcs9EL7szOP8Zsi4IFTFSsn4/zIRcRoIYXIkQjIISAAR6UfQEMMCA5PwUYYIABBhhggLIGGCAfJvJpJh+n8nn+AIccSh3vNUjhAAAAAElFTkSuQmCC" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./css/all.css">
+  <link rel="stylesheet" href="./css/learning.css">
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ5T2ZY0DZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-MZ5T2ZY0DZ');
+</script>
+
+<body>
+  <iframe id="result" src="" onkeydown="panic()" allowfullscreen></iframe>
+  <div class="flex-box">
+    <center>
+      <div class="notification">
+        <h3 class="title"></h3>
+        <p class="content"></p>
+      </div>
+    </center>
+  </div>
+  <div class="settingspanel">
+    <button style="float: right; font-size: 17px; margin-top: -10px; margin-right: -10px;" onclick="showsettings()">Exit
+      menu</button>
+    <h1 style="margin-top: -1px;">Settings Panel</h1>
+    <p style="margin-top: -7px; font-size: 18px;">A Settings Menu that can be used for your customization.</p>
+    <br />
+    <div class="card">
+      <center>
+        <button onclick="togglenavbar()" id="hideuibtn">Automatically hide navbar</button>
+        <button class="settingsbtn" id="aboutblank">About:blank cloak</button>
+        <button class="settingsbtn" onclick="proxyURL()" id="proxybtn">Show encoded URL</button>
+        <button class="settingsbtn" onclick="showorhidedevtools()">Enable/disable Devtools</button>
+        <button class="settingsbtn" id="aboutblankwithoutcloak">About:blank cloak without google classroom</button>
+        <p>Background changer</p>
+        <input id="loaderinput" placeholder="Add background URL...">
+        <button style="padding: 9px;" onclick="changeloader()">Save background</button>
+      </center>
+      <br />
+    </div>
+  </div>
+  <div>
+    <center>
+      <div class="mainbtns" onmouseover="detecthiddenui()" onmouseleave="hideui()">
+        <button class="navbtn" onclick="backPX()"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="navbtn" onclick="forwardPX()"><i class="fa-solid fa-arrow-right"></i></button>
+        <button class="navbtn" onclick="reloadPX()"><i class="fa-solid fa-rotate-right"></i></button>
+        <button class="navbtn" onclick="location.href = '/dashboard';"><i class="fa-solid fa-house"></i></button>
+        <button class="navbtn" onclick="searchshow()"><i class="fa-solid fa-search"></i></button>
+        <button class="navbtn" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></button>
+        <button class="navbtn" onclick="popoutRes()"><i class="fa-solid fa-up-right-from-square"></i></button>
+        <button class="navbtn" onclick="showsettings()"><i class="fa-solid fa-gear"></i></button>
+        <button class="navbtn" id="devtools" onclick="devTools()"><i class="fa-solid fa-code"></i></button>
+      </div>
+    </center>
+    <!--<div style="display: flex; justify-content: center;">
+    <div class="dropdown" onclick="showui()" onmouseleave="hideshowhiddenui()">
+      Show UI
+    </div>
+  </div>-->
+    <div class="searchbar">
+      <form id="searchform" style="display: flex; justify-content: center;">
+        <input type="text" class="searchinput" placeholder="Search the web freely..." />
+        <button class="searchbtn" style="margin-left: 5px;">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="flex-box">
+    <div class="proxyurl">
+      <input placeholder="Processing . . ." id="proxyurl" value="" title="Click to copy link." style="color: #909090;"
+        onclick="CopyLink('proxyurl');" readonly />
+    </div>
+  </div>
+  </div>
+  <script src="./uv/uv.bundle.js"></script>
+  <script src="./uv/uv.config.js"></script>
+  <script src="./js/learninginit.js"></script>
+  <script src="./js/learning.js"></script>
+
+  <script>
+    let savedTitle = localStorage.getItem("tabName");
+    let savedBG = localStorage.getItem("BG");
+    let savedFavicon = localStorage.getItem("favicon");
+    let favicon = document.getElementById("icon");
+    let savedLink = localStorage.getItem("savedLink");
+    let savedKey = localStorage.getItem("savedKey");
+    let savedIframeBackground = localStorage.getItem("loader");
+
+    if (savedTitle) {
+      document.title = savedTitle;
+    }
+    if (savedFavicon) {
+      favicon.href = savedFavicon;
+    }
+
+    if (savedBG) {
+      document.body.style.backgroundImage = `url("${savedBG}")`;
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundSize = "cover";
+    }
+
+    if (savedIframeBackground) {
+      iframe.style.backgroundImage = `url('${savedIframeBackground}')`;
+      iframe.style.backgroundSize = "cover";
+      iframe.style.backgroundRepeat = "no-repeat";
+    }
+
+    let tabclosingval = localStorage.getItem("tabcloseval");
+
+    window.onbeforeunload = () => {
+      if (tabclosingval == "true") {
+        return "Do you want to leave the current tab?";
+      }
+    }
+
+    function panic(event) {
+      if (event.key === savedKey) {
+        focusIframe();
+        if (savedLink.includes("https://")) {
+          window.location.href = savedLink;
+        } else {
+          window.location.href = "https://" + savedLink;
+        }
+      }
+    }
+
+    function focusIframe() {
+      document.getElementById("result").focus();
+    }
+
+    document.addEventListener("keydown", panic);
+  </script>
+
+
+</body>
+
+</html>

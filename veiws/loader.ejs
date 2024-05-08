@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  	<div class="loading"></div>
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Slides
+  </title>
+  <link rel="stylesheet" href="./css/all.css" />
+  <link id="icon" rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4Ae3XMQ6AIBQD0B5OPTF4BTwQhj+pdNb1pw5t0oQQEt5aMH3HdlYcs9EL7szOP8Zsi4IFTFSsn4/zIRcRoIYXIkQjIISAAR6UfQEMMCA5PwUYYIABBhhggLIGGCAfJvJpJh+n8nn+AIccSh3vNUjhAAAAAElFTkSuQmCC" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    .panel {
+      width: 25%;
+      padding: 20px;
+      border: 2px solid #000;
+      background-color: rgba(20, 20, 20, 0.612);
+      border-radius: 10px;
+      margin-top: 15%;
+    }
+  </style>
+</head>
+<script>
+  const isLoggedIn = localStorage.getItem("loggedin");
+  if (!isLoggedIn) {
+    location.href = "/login";
+  }
+</script>
+<body>
+    <center>
+      <div>
+        <div class="panel">
+          <h1>Loading site...</h1>
+          <div>
+            <img id="kitty" src="" alt="kitty!!!!" style="width: 20%; border-radius: 20px;">
+          </div>
+          <p>
+            If it dosen't load at all, please report it to the owner.
+            <br />
+          </p>
+        </div>
+      </div>
+    </center>
+    <script>
+      let savedTitle = localStorage.getItem("tabName");
+      let savedBG = localStorage.getItem("BG");
+      let savedFavicon = localStorage.getItem("favicon");
+      let favicon = document.getElementById("icon");
+      let savedLink = localStorage.getItem("savedLink");
+      let savedKey = localStorage.getItem("savedKey");
+
+      if (savedTitle) {
+        document.title = savedTitle;
+      }
+      if (savedFavicon) {
+        favicon.href = savedFavicon;
+      }
+
+      if (savedBG) {
+        document.body.style.backgroundImage = `url("${savedBG}")`;
+        document.body.style.backgroundRepeat = "no-repeat"
+        document.body.style.backgroundSize = "cover";
+      }
+
+      function panic(event) {
+        if (event.key === savedKey || event.key === savedKey) {
+          if (savedLink.includes("https://")) {
+            window.location.href = savededulink;
+          } else {
+            window.location.href = "https://" + savedLink;
+          }
+        }
+      }
+
+      document.addEventListener("keydown", panic);
+    </script>
+    <script>
+      let kitty = document.getElementById("kitty");
+      let newLoader = localStorage.getItem("loader");
+
+      let kitties = [
+        "./img/kitty/kitty1.gif",
+        "./img/kitty/kitty2.gif",
+        "./img/kitty/kitty3.gif",
+        "./img/kitty/kitty4.gif",
+        "./img/kitty/kitty5.gif",
+        "./img/kitty/kitty6.gif",
+        "./img/kitty/kitty7.gif",
+        "./img/kitty/kitty8.gif",
+        "./img/kitty/kitty9.gif",
+        "./img/kitty/kitty10.gif",
+        "https://storage.googleapis.com/replit/images/1695167001770_bcbccc8aa66e23fb02a11cc7267639b6.gif",
+      ];
+
+
+      let randomKitty = Math.floor(Math.random() * kitties.length);
+
+      kitty.src = kitties[randomKitty];
+
+      if (newLoader) {
+        kitty.src = `${newLoader}`;
+      } else {
+        kitty.src = kitties[randomKitty];
+      }
+
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function delay(milliseconds) {
+          return new Promise(resolve => {
+            setTimeout(resolve, milliseconds);
+          });
+        }
+
+        delay(500).then(() => {
+          location.href = "/learning";
+        });
+      });
+      
+    </script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
